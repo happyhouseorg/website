@@ -1,0 +1,230 @@
+:root {
+    --color-background: #f3e056;
+
+    --axis-x: 1px;
+    --axis-y: 1rem;
+    --delay: 10;
+
+    --color-black: #000;
+    --color-white: #fff;
+    --color-orange: #D49C3D;
+    --color-red: #D14B3D;
+    --color-violet: #CF52EB;
+    --color-blue: #44A3F7;
+    --color-green: #5ACB3C;
+    --color-yellow: #DEBF40;
+
+    --color-foreground: var(--color-white);
+    --font-name: Righteous, sans-serif;
+}
+
+html, body {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-background);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-name);
+
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.c-rainbow {
+    counter-reset: rainbow;
+    position: relative;
+    display: block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    cursor: default;
+    z-index: 1;
+}
+
+.c-rainbow__layer {
+    --text-color: var(--color-foreground);
+    counter-increment: rainbow;
+    font-size: 3rem;
+    color: var(--text-color);
+
+    text-shadow:
+            -1px -1px 0 var(--color-black),
+            1px -1px 0 var(--color-black),
+            -1px 1px 0 var(--color-black),
+            1px 1px 0 var(--color-black),
+            4px 4px 0 rgba(0, 0, 0, 0.2);
+
+    animation: rainbow 1.5s ease-in-out infinite;
+}
+
+.c-rainbow__layer:nth-child(1) {
+    animation-delay: calc(1 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 1);
+    z-index: -10;
+}
+
+.c-rainbow__layer:nth-child(2) {
+    animation-delay: calc(2 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 2);
+    z-index: -20;
+}
+
+.c-rainbow__layer:nth-child(3) {
+    animation-delay: calc(3 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 3);
+    z-index: -30;
+}
+
+.c-rainbow__layer:nth-child(4) {
+    animation-delay: calc(4 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 4);
+    z-index: -40;
+}
+
+.c-rainbow__layer:nth-child(5) {
+    animation-delay: calc(5 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 5);
+    z-index: -50;
+}
+
+.c-rainbow__layer:nth-child(6) {
+    animation-delay: calc(6 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 6);
+    z-index: -60;
+}
+
+.c-rainbow__layer:nth-child(7) {
+    animation-delay: calc(7 / var(--delay) * 1s);
+    left: calc(var(--axis-x) * 7);
+    z-index: -70;
+}
+
+.c-rainbow__layer:not(:first-child) {
+    position: absolute;
+    top: 0;
+}
+
+.c-rainbow__layer--white {
+    --text-color: var(--color-white);
+}
+
+.c-rainbow__layer--orange {
+    --text-color: var(--color-orange);
+}
+
+.c-rainbow__layer--red {
+    --text-color: var(--color-red);
+}
+
+.c-rainbow__layer--violet {
+    --text-color: var(--color-violet);
+}
+
+.c-rainbow__layer--blue {
+    --text-color: var(--color-blue);
+}
+
+.c-rainbow__layer--green {
+    --text-color: var(--color-green);
+}
+
+.c-rainbow__layer--yellow {
+    --text-color: var(--color-yellow);
+}
+
+@keyframes rainbow {
+    0%, 100% {
+        transform: translateY(var(--axis-y));
+    }
+    50% {
+        transform: translateY(calc(var(--axis-y) * -1));
+    }
+}
+
+/* Styles for vertical links */
+.vertical-link {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    text-decoration: none;
+    font-family: var(--font-name);
+    font-size: 1rem;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.vertical-link.left {
+    left: 0;
+}
+
+.vertical-link.right {
+    right: 0;
+}
+
+.vertical-link:hover {
+    background-color: var(--color-yellow);
+}
+
+/* Styles for footer links */
+footer {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    z-index: 1000;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--color-black);
+    font-family: var(--font-name);
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    html, body {
+        font-size: 28px; /* Increase base font size */
+    }
+
+    .c-rainbow__layer {
+        font-size: 2.5rem; /* Increase rainbow text size */
+    }
+
+    .vertical-link {
+        /*font-size: 1.5rem; !* Increase vertical link text size *!*/
+        padding: 15px; /* Increase padding for better touch targets */
+    }
+
+    .footer-links a {
+        /*font-size: 1.5rem; !* Increase footer link text size *!*/
+    }
+}

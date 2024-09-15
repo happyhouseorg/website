@@ -1,0 +1,120 @@
+# macOS System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+.DocumentRevisions-V100
+.FBCIndex
+.TemporaryItems
+.apdisk
+
+# macOS Finder Attributes
+*.DS_Store
+*.AppleDouble
+Icon?
+._*
+
+# Thumbnails
+.Thumbnails
+
+# Files that might appear on external disk
+.VolumeIcon.icns
+.DFStore
+.fseventsd
+
+# IntelliJ IDEA Files
+*.iml
+.idea/
+*.iws
+*.ipr
+
+# Vim swap files
+.*.swp
+
+# Temporary Files
+*.tmp
+*.temp
+*.old
+*.orig
+*.backup
+*.bak
+*.swp
+*~
+
+# Logs and Databases
+*.log
+*.sql
+*.sqlite
+
+# Node Modules and Build Directories
+node_modules/
+bower_components/
+dist/
+build/
+
+# Package Files
+*.tgz
+*.zip
+*.7z
+
+# Compiled Files
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Environment Variables File
+.env
+
+# SASS Cache
+.sass-cache/
+
+# NPM and Yarn Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Yarn Integrity File
+.yarn-integrity
+
+# VSCode Files
+.vscode/
+.history/
+
+# Sublime Text Files
+*.sublime-workspace
+*.sublime-project
+
+# Other IDEs and Editors
+*.idea/
+*.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ignore Coverage Reports
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# eslint cache
+.eslintcache
+
+# MacOS QuickLook Files
+.AppleDouble
+.LSOverride
+
+# Custom Exclusions
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
